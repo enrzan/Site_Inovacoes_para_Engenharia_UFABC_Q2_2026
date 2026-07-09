@@ -4,110 +4,175 @@
   <link rel="icon" type="image/png" href="imagens/icon.png">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>enrzan</title>
+
+  <title>Desbloqueia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Chewy&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --laranja-forte: #ff751f;
+      --laranja-claro: #ff914d;
+      --lilas: #cb6ce6;
+      --roxo: #8c52ff;
+      --fundo: #fff7f0;
+      --texto: #2b1f3a;
+      --branco: #ffffff;
+    }
+
     body {
-      background-color: #007f00;
-      font-family: Arial, sans-serif;
+      background-color: var(--laranja-claro);
+      font-family: 'Baloo 2', Arial, sans-serif;
       margin: 0;
       padding: 0;
+      color: var(--texto);
     }
 
     main {
-      background-color: #3ca240;
+      background-color: var(--branco);
       max-width: 1000px;
       margin: 0 auto;
-      padding: 20px;
-      box-shadow: 0 0 40px #003300;
+      padding: 24px;
+      box-shadow: 0 0 35px rgba(43, 31, 58, 0.25);
+      border-left: 6px solid var(--laranja-forte);
+      border-right: 6px solid var(--laranja-forte);
+      min-height: 100vh;
+      box-sizing: border-box;
     }
 
     .titulo-enrzan {
-      color: black;
-      text-shadow: 
-        -1px -1px 0 green,  
-         1px -1px 0 green,
-        -1px  1px 0 green,
-         1px  1px 0 green;
-      padding: 8px;
+      font-family: 'Chewy', cursive;
+      color: var(--roxo);
+      text-shadow:
+        -2px -2px 0 var(--branco),
+         2px -2px 0 var(--branco),
+        -2px  2px 0 var(--branco),
+         2px  2px 0 var(--branco);
+      padding: 14px;
       text-align: center;
-      font-size: 3em;
-      font-weight: bold;
-      border: 5px solid green;
-      background-color: rgba(0, 0, 0, 1);
+      font-size: 4em;
+      font-weight: normal;
+      border: 5px solid var(--laranja-forte);
+      background-color: var(--fundo);
+      border-radius: 24px;
       margin: 20px 0;
     }
 
     .imagem-central {
       display: block;
-      margin: 0 auto 20px auto;
-      border: 5px solid green;
+      margin: 0 auto 24px auto;
+      border: 5px solid var(--laranja-forte);
+      border-radius: 22px;
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
       object-position: center;
       box-sizing: border-box;
     }
 
     .container-article {
-      background-color: #5cb85c;
+      background-color: var(--fundo);
       width: 100%;
       margin: 20px 0;
-      padding: 20px;
-      box-shadow: 0 0 10px black;
+      padding: 24px;
+      box-shadow: 0 0 12px rgba(43, 31, 58, 0.18);
       font-size: 1.2em;
-      line-height: 1.6;
+      line-height: 1.7;
       text-align: justify;
-      border: 5px solid green;
+      border: 4px solid var(--lilas);
+      border-radius: 22px;
       box-sizing: border-box;
+    }
+
+    .container-article p {
+      margin-top: 0;
     }
 
     ul {
       list-style-type: none;
       padding-left: 0;
-      margin: 0;
+      margin: 24px 0 0 0;
     }
 
     li {
-      margin: 15px 0;
+      margin: 16px 0;
       position: relative;
-      padding-left: 25px;
+      padding-left: 32px;
     }
 
     li::before {
       content: "•";
       position: absolute;
       left: 0;
-      color: black;
-      font-size: 1.5em;
+      color: var(--laranja-forte);
+      font-size: 1.8em;
       line-height: 1;
     }
 
     li a {
-      color: black;
+      color: var(--roxo);
       text-decoration: none;
-      text-shadow: 
-        -1px -1px 0 green,  
-         1px -1px 0 green,
-        -1px  1px 0 green,
-         1px  1px 0 green;
-      font-size: 1.5em;
-      font-weight: bold;
+      font-size: 1.6em;
+      font-weight: 800;
+      text-shadow:
+        -1px -1px 0 var(--lilas),
+         1px -1px 0 var(--lilas),
+        -1px  1px 0 var(--lilas),
+         1px  1px 0 var(--lilas);
     }
 
     li a:hover {
+      color: var(--laranja-forte);
       text-decoration: underline;
       text-decoration-thickness: 3px;
     }
+
+    @media (max-width: 768px) {
+      main {
+        width: 95%;
+        padding: 16px;
+        border-left: none;
+        border-right: none;
+      }
+
+      .titulo-enrzan {
+        font-size: 2.8em;
+        padding: 10px;
+      }
+
+      .imagem-central {
+        height: 160px;
+      }
+
+      .container-article {
+        font-size: 1.05em;
+        line-height: 1.6;
+        text-align: left;
+        padding: 18px;
+      }
+
+      li {
+        padding-left: 26px;
+      }
+
+      li a {
+        font-size: 1.25em;
+      }
+    }
   </style>
 </head>
+
 <body>
   <main>
-    <div class="titulo-enrzan">enrzan</div>
+    <div class="titulo-enrzan">Desbloqueia</div>
 
     <img src="imagens/mother_circuit.png" alt="Imagem central" class="imagem-central" />
 
     <article class="container-article">
       <p>Este site foi desenvolvido como uma forma de estudar e praticar a linguagem de programação HTML e CSS, aproveitando também para criar um repositório das principais conquistas e progressos pessoais. A proposta é utilizá-lo como complemento ao currículo tradicional, reunindo experiências e aprendizados adquiridos ao longo da trajetória acadêmica e profissional.</p>
+
       <p>A seguir, apresento uma série de tópicos que descrevem de maneira mais detalhada minha caminhada e evolução pessoal.</p>
     </article>
 
