@@ -85,16 +85,6 @@
       text-shadow: 3px 3px 0 rgba(203, 108, 230, 0.28);
     }
 
-    .imagem-central {
-      display: block;
-      width: 100%;
-      height: auto;
-      margin: 0 auto 28px;
-      border: 4px solid var(--roxo);
-      border-radius: 22px;
-      box-shadow: 0 10px 22px rgba(101, 50, 210, 0.18);
-    }
-
     .introducao,
     section {
       width: 100%;
@@ -148,9 +138,9 @@
     }
 
     blockquote {
+      max-width: 760px;
       margin: 26px auto;
       padding: 22px;
-      max-width: 760px;
       color: var(--roxo-escuro);
       background-color: var(--lilas-claro);
       border-left: 8px solid var(--laranja-forte);
@@ -187,6 +177,112 @@
       color: var(--laranja-forte);
       font-size: 2rem;
       line-height: 1;
+    }
+
+    .modelo-pdf {
+      margin: 28px 0;
+      overflow: hidden;
+      background-color: var(--branco);
+      border: 3px solid var(--roxo);
+      border-radius: 18px;
+      box-shadow: 0 8px 18px rgba(101, 50, 210, 0.16);
+    }
+
+    .modelo-pdf summary {
+      position: relative;
+      padding: 18px 64px 18px 22px;
+      color: var(--branco);
+      background: linear-gradient(
+        135deg,
+        var(--roxo) 0%,
+        var(--roxo-escuro) 100%
+      );
+      font-size: 1.3rem;
+      font-weight: 800;
+      line-height: 1.3;
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+    }
+
+    .modelo-pdf summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .modelo-pdf summary::after {
+      content: "+";
+      position: absolute;
+      top: 50%;
+      right: 22px;
+      transform: translateY(-50%);
+      color: var(--laranja-claro);
+      font-family: Arial, sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .modelo-pdf[open] summary::after {
+      content: "−";
+    }
+
+    .modelo-pdf summary:hover {
+      background: linear-gradient(
+        135deg,
+        var(--roxo-escuro) 0%,
+        var(--roxo) 100%
+      );
+    }
+
+    .modelo-pdf summary:focus-visible {
+      outline: 4px solid var(--laranja-forte);
+      outline-offset: -4px;
+    }
+
+    .pdf-conteudo {
+      padding: 16px;
+      background: linear-gradient(
+        135deg,
+        var(--lilas-claro) 0%,
+        var(--laranja-suave) 100%
+      );
+    }
+
+    .pdf-visualizador {
+      display: block;
+      width: 100%;
+      height: 720px;
+      background-color: var(--branco);
+      border: 2px solid var(--lilas);
+      border-radius: 12px;
+    }
+
+    .pdf-link {
+      display: block;
+      width: fit-content;
+      margin: 16px auto 0;
+      padding: 11px 20px;
+      color: var(--branco);
+      background-color: var(--laranja-forte);
+      border: 3px solid var(--laranja-forte);
+      border-radius: 12px;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .pdf-link:hover {
+      color: var(--laranja-forte);
+      background-color: var(--branco);
+      transform: translateY(-2px);
+    }
+
+    .pdf-link:focus-visible {
+      outline: 3px solid var(--roxo);
+      outline-offset: 4px;
     }
 
     .encerramento {
@@ -254,11 +350,6 @@
         border-radius: 18px;
       }
 
-      .imagem-central {
-        border-width: 3px;
-        border-radius: 16px;
-      }
-
       .introducao,
       section {
         padding: 20px;
@@ -289,6 +380,19 @@
       li::before {
         left: 13px;
       }
+
+      .modelo-pdf summary {
+        padding: 16px 56px 16px 18px;
+        font-size: 1.15rem;
+      }
+
+      .modelo-pdf summary::after {
+        right: 18px;
+      }
+
+      .pdf-visualizador {
+        height: 550px;
+      }
     }
 
     @media (max-width: 480px) {
@@ -303,10 +407,6 @@
         margin-bottom: 16px;
       }
 
-      .imagem-central {
-        margin-bottom: 20px;
-      }
-
       .introducao,
       section {
         margin: 16px 0;
@@ -315,6 +415,14 @@
 
       blockquote {
         font-size: 1.45rem;
+      }
+
+      .pdf-conteudo {
+        padding: 10px;
+      }
+
+      .pdf-visualizador {
+        height: 450px;
       }
     }
   </style>
@@ -325,12 +433,6 @@
     <header>
       <h1 class="titulo-principal">Apresentação do Projeto Desbloqueia</h1>
     </header>
-
-    <img
-      src="imagens/Capa.png"
-      alt="Capa do projeto Desbloqueia"
-      class="imagem-central"
-    >
 
     <article>
       <div class="introducao">
@@ -482,6 +584,27 @@
         <p>Para compreender a viabilidade do Desbloqueia, elaboramos um modelo de negócios utilizando a metodologia Business Model Canvas.</p>
 
         <p>Esse modelo permite visualizar os principais elementos necessários para o funcionamento da plataforma, como proposta de valor, público-alvo, recursos, atividades, parceiros, canais, custos e fontes de receita.</p>
+
+        <details class="modelo-pdf">
+          <summary>Visualizar o modelo de negócios completo</summary>
+
+          <div class="pdf-conteudo">
+            <iframe
+              src="arquivos/modelo-de-negocio.pdf"
+              title="Modelo de negócios do projeto Desbloqueia"
+              class="pdf-visualizador"
+            ></iframe>
+
+            <a
+              href="arquivos/modelo-de-negocio.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="pdf-link"
+            >
+              Abrir PDF em uma nova aba
+            </a>
+          </div>
+        </details>
 
         <h3>Parcerias principais</h3>
 
