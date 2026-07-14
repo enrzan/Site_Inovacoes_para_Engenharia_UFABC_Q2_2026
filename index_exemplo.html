@@ -1,1 +1,633 @@
+<!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+  <link rel="icon" type="image/png" href="imagens/Logo.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Título de Exemplo | Desbloqueia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Chewy&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --laranja-forte: #ff751f;
+      --laranja-claro: #ff914d;
+      --lilas: #cb6ce6;
+      --roxo: #8c52ff;
+      --roxo-escuro: #6532d2;
+      --lilas-claro: #f1ddf8;
+      --laranja-suave: #fff0e6;
+      --creme: #fff8f3;
+      --fundo-conteudo: #fffdfb;
+      --texto: #352544;
+      --branco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Baloo 2', Arial, sans-serif;
+      color: var(--texto);
+      background: linear-gradient(
+        135deg,
+        var(--laranja-claro) 0%,
+        var(--laranja-forte) 100%
+      );
+    }
+
+    main {
+      width: calc(100% - 40px);
+      max-width: 1100px;
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 28px;
+      background-color: var(--fundo-conteudo);
+      border-left: 6px solid var(--laranja-forte);
+      border-right: 6px solid var(--laranja-forte);
+      box-shadow: 0 0 35px rgba(53, 37, 68, 0.24);
+    }
+
+    .titulo-principal {
+      margin: 0 0 24px;
+      padding: 16px;
+      font-family: 'Chewy', cursive;
+      font-size: clamp(2.7rem, 6vw, 4.5rem);
+      font-weight: normal;
+      line-height: 1.1;
+      text-align: center;
+      color: var(--roxo);
+      background: linear-gradient(
+        135deg,
+        var(--creme) 0%,
+        var(--lilas-claro) 100%
+      );
+      border: 5px solid var(--laranja-forte);
+      border-radius: 24px;
+      box-shadow: 0 8px 18px rgba(140, 82, 255, 0.14);
+      text-shadow: 3px 3px 0 rgba(203, 108, 230, 0.28);
+    }
+
+    section {
+      width: 100%;
+      margin: 20px 0;
+      padding: 28px;
+      background: linear-gradient(
+        135deg,
+        var(--creme) 0%,
+        #fff5ee 100%
+      );
+      border: 4px solid var(--lilas);
+      border-radius: 22px;
+      box-shadow: 0 8px 18px rgba(101, 50, 210, 0.13);
+      font-size: 1.15rem;
+      line-height: 1.75;
+      text-align: justify;
+    }
+
+    section:nth-of-type(even) {
+      background: linear-gradient(
+        135deg,
+        var(--lilas-claro) 0%,
+        var(--creme) 100%
+      );
+      border-color: var(--roxo);
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      font-family: 'Chewy', cursive;
+      font-size: 2.2rem;
+      font-weight: normal;
+      line-height: 1.2;
+      color: var(--roxo-escuro);
+    }
+
+    h3 {
+      margin: 24px 0 12px;
+      color: var(--laranja-forte);
+      font-size: 1.4rem;
+      line-height: 1.3;
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    .link-exemplo {
+      display: inline-block;
+      padding: 11px 22px;
+      color: var(--branco);
+      background-color: var(--roxo);
+      border: 3px solid var(--roxo);
+      border-radius: 12px;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .link-exemplo:hover {
+      color: var(--roxo);
+      background-color: var(--branco);
+      transform: translateY(-2px);
+    }
+
+    .link-exemplo:focus-visible {
+      outline: 3px solid var(--laranja-forte);
+      outline-offset: 4px;
+    }
+
+    .imagem-exemplo {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      background-color: var(--branco);
+      border: 4px solid var(--roxo);
+      border-radius: 18px;
+      box-shadow: 0 8px 18px rgba(101, 50, 210, 0.16);
+    }
+
+    ul {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      padding: 11px 16px 11px 42px;
+      background-color: rgba(255, 255, 255, 0.72);
+      border: 2px solid rgba(203, 108, 230, 0.4);
+      border-radius: 12px;
+    }
+
+    li::before {
+      content: "•";
+      position: absolute;
+      top: 50%;
+      left: 16px;
+      transform: translateY(-54%);
+      color: var(--laranja-forte);
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    blockquote {
+      max-width: 760px;
+      margin: 24px auto 0;
+      padding: 22px;
+      color: var(--roxo-escuro);
+      background-color: var(--lilas-claro);
+      border-left: 8px solid var(--laranja-forte);
+      border-radius: 14px;
+      font-family: 'Chewy', cursive;
+      font-size: 1.8rem;
+      line-height: 1.3;
+      text-align: center;
+      box-shadow: 0 6px 14px rgba(140, 82, 255, 0.14);
+    }
+
+    .conteudo-retratil {
+      margin-top: 22px;
+      overflow: hidden;
+      background-color: var(--branco);
+      border: 3px solid var(--roxo);
+      border-radius: 18px;
+      box-shadow: 0 8px 18px rgba(101, 50, 210, 0.16);
+    }
+
+    .conteudo-retratil summary {
+      position: relative;
+      padding: 18px 64px 18px 22px;
+      color: var(--branco);
+      background: linear-gradient(
+        135deg,
+        var(--roxo) 0%,
+        var(--roxo-escuro) 100%
+      );
+      font-size: 1.3rem;
+      font-weight: 800;
+      line-height: 1.3;
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+    }
+
+    .conteudo-retratil summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .conteudo-retratil summary::after {
+      content: "+";
+      position: absolute;
+      top: 50%;
+      right: 22px;
+      transform: translateY(-50%);
+      color: var(--laranja-claro);
+      font-family: Arial, sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .conteudo-retratil[open] summary::after {
+      content: "−";
+    }
+
+    .conteudo-retratil summary:hover {
+      filter: brightness(1.08);
+    }
+
+    .conteudo-retratil summary:focus-visible {
+      outline: 4px solid var(--laranja-forte);
+      outline-offset: -4px;
+    }
+
+    .retratil-conteudo {
+      padding: 18px;
+      background: linear-gradient(
+        135deg,
+        var(--lilas-claro) 0%,
+        var(--laranja-suave) 100%
+      );
+    }
+
+    .retratil-conteudo p {
+      margin: 0;
+    }
+
+    .pdf-visualizador {
+      display: block;
+      width: 100%;
+      height: 720px;
+      background-color: var(--branco);
+      border: 2px solid var(--lilas);
+      border-radius: 14px;
+    }
+
+    .pdf-link {
+      display: block;
+      width: fit-content;
+      margin: 18px auto 0;
+      padding: 11px 22px;
+      color: var(--branco);
+      background-color: var(--laranja-forte);
+      border: 3px solid var(--laranja-forte);
+      border-radius: 12px;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .pdf-link:hover {
+      color: var(--laranja-forte);
+      background-color: var(--branco);
+      transform: translateY(-2px);
+    }
+
+    .pdf-link:focus-visible {
+      outline: 3px solid var(--roxo);
+      outline-offset: 4px;
+    }
+
+    .tabela-container {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: var(--branco);
+    }
+
+    th,
+    td {
+      padding: 14px;
+      border: 2px solid var(--lilas-claro);
+      text-align: left;
+    }
+
+    th {
+      color: var(--branco);
+      background-color: var(--roxo);
+    }
+
+    tr:nth-child(even) {
+      background-color: var(--laranja-suave);
+    }
+
+    .back-button-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 28px;
+    }
+
+    .back-button {
+      display: block;
+      width: 58px;
+      height: auto;
+      transition: transform 0.2s ease;
+    }
+
+    .back-button:hover {
+      transform: scale(1.1);
+    }
+
+    .back-button:focus-visible {
+      outline: 3px solid var(--roxo);
+      outline-offset: 5px;
+      border-radius: 50%;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        width: 94%;
+        padding: 16px;
+        border-left: 3px solid var(--laranja-forte);
+        border-right: 3px solid var(--laranja-forte);
+      }
+
+      .titulo-principal {
+        padding: 14px;
+        border-width: 4px;
+        border-radius: 18px;
+      }
+
+      section {
+        padding: 20px;
+        font-size: 1.05rem;
+        line-height: 1.65;
+        text-align: left;
+        border-width: 3px;
+        border-radius: 18px;
+      }
+
+      h2 {
+        font-size: 1.9rem;
+      }
+
+      blockquote {
+        padding: 18px;
+        font-size: 1.55rem;
+      }
+
+      .conteudo-retratil summary {
+        padding: 16px 56px 16px 18px;
+        font-size: 1.15rem;
+      }
+
+      .conteudo-retratil summary::after {
+        right: 18px;
+      }
+
+      .pdf-visualizador {
+        height: 550px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      main {
+        width: 100%;
+        padding: 12px;
+        border-left: none;
+        border-right: none;
+      }
+
+      .titulo-principal {
+        margin-bottom: 16px;
+      }
+
+      section {
+        margin: 16px 0;
+        padding: 17px;
+      }
+
+      .retratil-conteudo {
+        padding: 10px;
+      }
+
+      .pdf-visualizador {
+        height: 450px;
+      }
+
+      .link-exemplo,
+      .pdf-link {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1 class="titulo-principal">Título de Exemplo</h1>
+    </header>
+
+    <section>
+      <h2>Exemplo de texto</h2>
+
+      <p>
+        Exemplo de texto. Este espaço pode ser utilizado para apresentar informações, explicações, objetivos, resultados ou qualquer outro conteúdo de uma nova página do site.
+      </p>
+
+      <p>
+        Para criar uma nova página, basta copiar este arquivo, alterar o título, substituir os textos e remover os elementos que não forem necessários.
+      </p>
+    </section>
+
+    <section>
+      <h2>Exemplo de subtítulos</h2>
+
+      <h3>Primeiro subtítulo</h3>
+
+      <p>
+        Exemplo de texto relacionado ao primeiro subtítulo.
+      </p>
+
+      <h3>Segundo subtítulo</h3>
+
+      <p>
+        Exemplo de texto relacionado ao segundo subtítulo.
+      </p>
+    </section>
+
+    <section>
+      <h2>Exemplo de link</h2>
+
+      <p>
+        O botão abaixo representa um exemplo de link que pode direcionar o usuário para outra página do site ou para um endereço externo.
+      </p>
+
+      <a
+        href="index.html"
+        class="link-exemplo"
+      >
+        Exemplo de link
+      </a>
+    </section>
+
+    <section>
+      <h2>Exemplo de imagem</h2>
+
+      <p>
+        A imagem abaixo pode ser substituída por qualquer arquivo armazenado na pasta de imagens.
+      </p>
+
+      <img
+        src="imagens/Exemplo.png"
+        alt="Exemplo de imagem"
+        class="imagem-exemplo"
+      >
+    </section>
+
+    <section>
+      <h2>Exemplo de lista</h2>
+
+      <ul>
+        <li>Primeiro item de exemplo</li>
+        <li>Segundo item de exemplo</li>
+        <li>Terceiro item de exemplo</li>
+        <li>Quarto item de exemplo</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Exemplo de frase destacada</h2>
+
+      <blockquote>
+        Exemplo de frase importante ou mensagem de destaque.
+      </blockquote>
+    </section>
+
+    <section>
+      <h2>Exemplo de conteúdo retrátil</h2>
+
+      <p>
+        Clique sobre a barra para mostrar ou esconder o conteúdo.
+      </p>
+
+      <details class="conteudo-retratil">
+        <summary>Visualizar conteúdo de exemplo</summary>
+
+        <div class="retratil-conteudo">
+          <p>
+            Este é um exemplo de conteúdo retrátil. Aqui podem ser inseridos textos, listas, imagens, vídeos, documentos ou outros elementos.
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <section>
+      <h2>Exemplo de PDF retrátil</h2>
+
+      <p>
+        Este modelo pode ser utilizado para apresentar documentos em PDF, como trabalhos, relatórios, modelos de negócios, panfletos e materiais complementares.
+      </p>
+
+      <details class="conteudo-retratil">
+        <summary>Visualizar documento em PDF</summary>
+
+        <div class="retratil-conteudo">
+          <iframe
+            src="imagens/Exemplo.pdf"
+            title="Documento de exemplo"
+            class="pdf-visualizador"
+          ></iframe>
+
+          <a
+            href="imagens/Exemplo.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="pdf-link"
+          >
+            Abrir PDF em uma nova aba
+          </a>
+        </div>
+      </details>
+    </section>
+
+    <section>
+      <h2>Exemplo de tabela</h2>
+
+      <div class="tabela-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Coluna 1</th>
+              <th>Coluna 2</th>
+              <th>Coluna 3</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Informação 1</td>
+              <td>Informação 2</td>
+              <td>Informação 3</td>
+            </tr>
+
+            <tr>
+              <td>Informação 4</td>
+              <td>Informação 5</td>
+              <td>Informação 6</td>
+            </tr>
+
+            <tr>
+              <td>Informação 7</td>
+              <td>Informação 8</td>
+              <td>Informação 9</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <div class="back-button-container">
+      <a href="index.html" aria-label="Voltar para a página inicial">
+        <img
+          src="imagens/Round-Back-Button-PNG-Image-Background.png"
+          alt="Voltar"
+          class="back-button"
+        >
+      </a>
+    </div>
+  </main>
+</body>
+
+</html>
