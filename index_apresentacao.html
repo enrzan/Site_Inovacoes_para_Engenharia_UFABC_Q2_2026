@@ -1,127 +1,618 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <link rel="icon" type="image/png" href="imagens/Logo.png">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title class="title">Apresentação do Autor</title>
-  <link rel="stylesheet" href="site/style_text.css" />
-  <link rel="stylesheet" href="site/style_title.css" />
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Apresentação do Projeto | Desbloqueia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Chewy&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
+    :root {
+      --laranja-forte: #ff751f;
+      --laranja-claro: #ff914d;
+      --lilas: #cb6ce6;
+      --roxo: #8c52ff;
+      --roxo-escuro: #6532d2;
+      --lilas-claro: #f1ddf8;
+      --laranja-suave: #fff0e6;
+      --creme: #fff8f3;
+      --fundo-conteudo: #fffdfb;
+      --texto: #352544;
+      --branco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background-color: green;
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Baloo 2', Arial, sans-serif;
+      color: var(--texto);
+      background: linear-gradient(
+        135deg,
+        var(--laranja-claro) 0%,
+        var(--laranja-forte) 100%
+      );
     }
 
-    .container-main {
-      background-color: #5cb85c;
-      width: 70%;
-      margin: 30px auto;
-      padding: 20px;
-      box-shadow: 0 0 10px black;
+    main {
+      width: calc(100% - 40px);
+      max-width: 1100px;
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 28px;
+      background-color: var(--fundo-conteudo);
+      border-left: 6px solid var(--laranja-forte);
+      border-right: 6px solid var(--laranja-forte);
+      box-shadow: 0 0 35px rgba(53, 37, 68, 0.24);
     }
 
-    .title {
-      color: black;
-      text-shadow:
-        -1px -1px 0 green,
-         1px -1px 0 green,
-        -1px  1px 0 green,
-         1px  1px 0 green;
-      padding: 10px;
+    .titulo-principal {
+      margin: 0 0 24px;
+      padding: 16px;
+      font-family: 'Chewy', cursive;
+      font-size: clamp(2.7rem, 6vw, 4.5rem);
+      font-weight: normal;
+      line-height: 1.1;
       text-align: center;
-      font-size: 2em;
-      border: 5px solid green;
-      background-color: black;
-      margin-bottom: 20px;
+      color: var(--roxo);
+      background: linear-gradient(
+        135deg,
+        var(--creme) 0%,
+        var(--lilas-claro) 100%
+      );
+      border: 5px solid var(--laranja-forte);
+      border-radius: 24px;
+      box-shadow: 0 8px 18px rgba(140, 82, 255, 0.14);
+      text-shadow: 3px 3px 0 rgba(203, 108, 230, 0.28);
     }
 
-    .links a {
-      color: black;
-      text-shadow:
-        -1px -1px 0 green,
-         1px -1px 0 green,
-        -1px  1px 0 green,
-         1px  1px 0 green;
-      text-decoration: none;
-    }
-
-    .links a:hover {
-      text-decoration: underline;
-    }
-
-    .links ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-
-    .author-text img {
-      float: right;
-      margin: 0 0 10px 20px;
-      width: 250px;
-      border-radius: 10px;
-    }
-
-    .author-text::after {
-      content: "";
+    .imagem-central {
       display: block;
-      clear: both;
+      width: 100%;
+      height: auto;
+      margin: 0 auto 28px;
+      border: 4px solid var(--roxo);
+      border-radius: 22px;
+      box-shadow: 0 10px 22px rgba(101, 50, 210, 0.18);
     }
 
-    .back-button {
-      width: 50px;
-      height: auto;
+    .introducao,
+    section {
+      width: 100%;
+      margin: 20px 0;
+      padding: 28px;
+      background: linear-gradient(
+        135deg,
+        var(--creme) 0%,
+        #fff5ee 100%
+      );
+      border: 4px solid var(--lilas);
+      border-radius: 22px;
+      box-shadow: 0 8px 18px rgba(101, 50, 210, 0.13);
+      font-size: 1.15rem;
+      line-height: 1.75;
+      text-align: justify;
+    }
+
+    section:nth-of-type(even) {
+      background: linear-gradient(
+        135deg,
+        var(--lilas-claro) 0%,
+        var(--creme) 100%
+      );
+      border-color: var(--roxo);
+    }
+
+    p {
+      margin-top: 0;
+      margin-bottom: 18px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin: 0 0 20px;
+      font-family: 'Chewy', cursive;
+      font-size: 2.2rem;
+      font-weight: normal;
+      line-height: 1.2;
+      color: var(--roxo-escuro);
+    }
+
+    h3 {
+      margin: 26px 0 14px;
+      font-size: 1.45rem;
+      line-height: 1.3;
+      color: var(--laranja-forte);
+    }
+
+    blockquote {
+      margin: 26px auto;
+      padding: 22px;
+      max-width: 760px;
+      color: var(--roxo-escuro);
+      background-color: var(--lilas-claro);
+      border-left: 8px solid var(--laranja-forte);
+      border-radius: 14px;
+      font-family: 'Chewy', cursive;
+      font-size: 2rem;
+      line-height: 1.3;
+      text-align: center;
+      box-shadow: 0 6px 14px rgba(140, 82, 255, 0.14);
+    }
+
+    ul {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0 22px;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      position: relative;
+      padding: 11px 16px 11px 42px;
+      background-color: rgba(255, 255, 255, 0.68);
+      border: 2px solid rgba(203, 108, 230, 0.35);
+      border-radius: 12px;
+    }
+
+    li::before {
+      content: "•";
       position: absolute;
-      right: 20px;
-      bottom: 20px;
+      top: 50%;
+      left: 16px;
+      transform: translateY(-54%);
+      color: var(--laranja-forte);
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .encerramento {
+      border-color: var(--laranja-forte);
+      background: linear-gradient(
+        135deg,
+        var(--laranja-suave) 0%,
+        var(--lilas-claro) 100%
+      );
+    }
+
+    .frase-final {
+      margin-top: 26px;
+      padding: 22px;
+      color: var(--branco);
+      background: linear-gradient(
+        135deg,
+        var(--roxo) 0%,
+        var(--roxo-escuro) 100%
+      );
+      border: 4px solid var(--laranja-forte);
+      border-radius: 18px;
+      font-family: 'Chewy', cursive;
+      font-size: clamp(1.7rem, 4vw, 2.5rem);
+      line-height: 1.3;
+      text-align: center;
+      box-shadow: 0 8px 18px rgba(101, 50, 210, 0.2);
     }
 
     .back-button-container {
-      position: relative;
-      height: 60px;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 28px;
     }
 
-    @media (max-width: 700px) {
-      .author-text img {
-        float: none;
-        display: block;
-        margin: 0 auto 20px auto;
+    .back-button {
+      display: block;
+      width: 58px;
+      height: auto;
+      transition: transform 0.2s ease;
+    }
+
+    .back-button:hover {
+      transform: scale(1.1);
+    }
+
+    .back-button:focus-visible {
+      outline: 3px solid var(--roxo);
+      outline-offset: 5px;
+      border-radius: 50%;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        width: 94%;
+        padding: 16px;
+        border-left: 3px solid var(--laranja-forte);
+        border-right: 3px solid var(--laranja-forte);
       }
 
-      .author-text {
+      .titulo-principal {
+        padding: 14px;
+        border-width: 4px;
+        border-radius: 18px;
+      }
+
+      .imagem-central {
+        border-width: 3px;
+        border-radius: 16px;
+      }
+
+      .introducao,
+      section {
+        padding: 20px;
+        font-size: 1.05rem;
+        line-height: 1.65;
         text-align: left;
+        border-width: 3px;
+        border-radius: 18px;
+      }
+
+      h2 {
+        font-size: 1.9rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+      }
+
+      blockquote {
+        padding: 18px;
+        font-size: 1.65rem;
+      }
+
+      li {
+        padding: 10px 12px 10px 38px;
+      }
+
+      li::before {
+        left: 13px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      main {
+        width: 100%;
+        padding: 12px;
+        border-left: none;
+        border-right: none;
+      }
+
+      .titulo-principal {
+        margin-bottom: 16px;
+      }
+
+      .imagem-central {
+        margin-bottom: 20px;
+      }
+
+      .introducao,
+      section {
+        margin: 16px 0;
+        padding: 17px;
+      }
+
+      blockquote {
+        font-size: 1.45rem;
       }
     }
   </style>
 </head>
+
 <body>
-  <div class="container-main">
+  <main>
     <header>
-      <h1 class="title">Apresentação do Autor</h1>
+      <h1 class="titulo-principal">Apresentação do Projeto Desbloqueia</h1>
     </header>
 
-    <article class="author-text">
-      <img src="imagens/EnricoZRaimundo_Foto_Perfil.jpg" alt="Foto de Enrico Zangirolami Raimundo" />
-      <p>Meu nome é Enrico Zangirolami Raimundo. Sou discente da Universidade Federal do ABC no curso de Bacharelado em Ciências e Tecnologia (BC&T) e como curso específico farei o bacharelado em Engenharia de Instrumentação, Automação e Robótica (IAR).</p>
-      <p>Fui aluno bolsista de Iniciação Científica (IC) na área de Engenharia de Materiais orientado pela Profa. Dra. Mara Cristina Lopes de Oliveira no projeto intitulado “Desenvolvimento de processo de anodização da liga de alumínio 2024-T3 com incorporação de materiais bidimensionais (2D) para aumento da resistência à corrosão e desgaste” (Processo CNPq 406291/2022-5 de 01/04/2024 a 31/03/2025).</p>
-      <p>Recentemente, iniciei minha segunda Iniciação Científica, por indicação de um dos meus professores favoritos, o Prof. Dr. Anderson Leonardo Sanches, na área de Projeto de Circuitos Integrados de Radiofrequência, sob a orientação do Prof. Dr. Carlos Eduardo Capovilla.</p>
-      <p>Além disso, sou voluntário no IEEE (Institute of Electrical and Electronics Engineers), mais especificamente na RAS (Robotics and Automation Society), no qual visamos o desenvolvimento de robôs de combate para competições, para fins de pesquisas.</p>
-      <p>Por fim, atuo como membro da Tamandutech, organização estudantil sem fins lucrativos da UFABC, voltada ao desenvolvimento e aplicação da robótica para fins educacionais, de extensão e competição. Integro o Núcleo Técnico da equipe, que projeta, constrói e aperfeiçoa robôs autônomos e rádio-controlados em diferentes categorias, como Combate, Hockey, Seguidor de Linha, Sumô e Sumô Lego. As atividades envolvem o domínio prático e teórico em áreas como eletrônica, mecânica e programação, com foco em inovação tecnológica, no trabalho colaborativo e na representação institucional em competições.</p> 
-      <p>Tenho como paixão circuitos elétricos, programação e simulação em Softwares CAD (Computer-Aided Design) e CAM (Computer-Aided Manufacturing), busco me aprofundar nessa área, e de preferência dominá-las, bem como possuo interesse em ferramentas de Business Intelligence, em especial o Power BI, no qual realizei um curso intensivo e busco aprofundamento contínuo.</p>
-      <ul class="links">
-        <li><a href="https://github.com/enrzan" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="https://www.instagram.com/enrico.zangirolami" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-        <li><a href="https://buscatextual.cnpq.br/buscatextual/visualizacv.do?id=K1523002T0" target="_blank" rel="noopener noreferrer">Lattes</a></li>
-        <li><a href="https://www.linkedin.com/in/enrico-zangirolami-raimundo-a85987359/" target="_blank" rel="noopener noreferrer">Linkedin</a></li>
-      </ul>
+    <img
+      src="imagens/Capa.png"
+      alt="Capa do projeto Desbloqueia"
+      class="imagem-central"
+    >
+
+    <article>
+      <div class="introducao">
+        <p>Boa tarde.</p>
+
+        <p>Nós somos Ana, Paulo Enrico e Gabriel, estudantes da Universidade Federal do ABC, e hoje vamos apresentar o Desbloqueia, um site educacional que está sendo desenvolvido como projeto da disciplina de Inovações para Engenharia, durante o segundo quadrimestre de 2026.</p>
+
+        <p>O Desbloqueia surgiu a partir de uma questão bastante presente na realidade educacional: muitas crianças e jovens apresentam dificuldades em matemática não necessariamente por falta de capacidade, mas porque frequentemente entram em contato com conteúdos apresentados de maneira excessivamente abstrata, técnica ou distante de suas experiências cotidianas.</p>
+
+        <p>Diante desse problema, pensamos em uma solução que pudesse aproximar a matemática dos estudantes de uma forma mais leve, visual, prática e acessível. Assim nasceu o Desbloqueia, cujo lema é:</p>
+
+        <blockquote>Matemática na prática, sem complicação.</blockquote>
+
+        <p>Nosso propósito é contribuir para a transformação da relação de crianças e jovens com a matemática. Para isso, estamos desenvolvendo uma plataforma educacional que pretende apresentar os conteúdos de maneira descontraída, contextualizada e interativa, reduzindo barreiras de compreensão e incentivando o interesse pelo aprendizado.</p>
+      </div>
+
+      <section>
+        <h2>O problema identificado</h2>
+
+        <p>Durante o desenvolvimento do projeto, observamos que a dificuldade em matemática pode estar relacionada a diversos fatores, como a utilização de uma linguagem muito formal, a falta de exemplos próximos da realidade do aluno, a ausência de recursos visuais e a pouca possibilidade de interação com o conteúdo.</p>
+
+        <p>Além disso, professores e responsáveis nem sempre possuem tempo ou recursos suficientes para criar atividades complementares, exercícios contextualizados e diferentes formas de explicar um mesmo assunto.</p>
+
+        <p>Nesse cenário, o Desbloqueia procura atuar em duas frentes. A primeira é oferecer ao estudante uma experiência de aprendizagem mais amigável. A segunda é disponibilizar uma ferramenta auxiliar para professores, pais e responsáveis que acompanham o processo de aprendizagem.</p>
+
+        <p>Portanto, o Desbloqueia não pretende substituir o professor ou o ensino escolar. A proposta é complementar o trabalho realizado em sala de aula, oferecendo novas maneiras de visualizar, praticar e compreender a matemática.</p>
+      </section>
+
+      <section>
+        <h2>Nossa solução</h2>
+
+        <p>O Desbloqueia está sendo desenvolvido como uma plataforma digital educacional voltada principalmente para crianças e jovens em idade escolar.</p>
+
+        <p>A ideia é que o usuário encontre explicações simples, exemplos práticos, exercícios e atividades que relacionem a matemática a situações do cotidiano. Em vez de apresentar apenas fórmulas e procedimentos prontos, a plataforma busca mostrar o raciocínio envolvido na resolução dos problemas e a utilidade daquele conteúdo na vida real.</p>
+
+        <p>Por exemplo, conceitos matemáticos podem ser relacionados a compras, jogos, esportes, organização do tempo, divisão de objetos, planejamento financeiro, construção, tecnologia e diversas outras situações presentes no dia a dia.</p>
+
+        <p>Além de funcionar como um repositório de conteúdos, o Desbloqueia pretende oferecer uma experiência gamificada e amigável, capaz de aumentar o envolvimento do estudante. A utilização de desafios, elementos visuais, atividades progressivas e uma comunicação menos rígida pode ajudar o aluno a desenvolver confiança e autonomia durante o processo de aprendizagem.</p>
+      </section>
+
+      <section>
+        <h2>Proposta de valor</h2>
+
+        <p>A principal proposta de valor do Desbloqueia é oferecer uma plataforma educacional:</p>
+
+        <ul>
+          <li>Acessível</li>
+          <li>Lúdica</li>
+          <li>Descontraída</li>
+          <li>Contextualizada</li>
+          <li>Visualmente atrativa</li>
+          <li>Complementar ao ensino escolar</li>
+          <li>Capaz de reduzir barreiras de compreensão</li>
+        </ul>
+
+        <p>Nossa intenção é fazer com que o estudante perceba que a matemática não precisa ser vista como um conjunto de regras difíceis e desconectadas. Ela pode ser compreendida como uma ferramenta útil para interpretar situações, resolver problemas e tomar decisões.</p>
+
+        <p>O projeto foi estruturado com base em três pilares principais.</p>
+
+        <h3>Linguagem descontraída</h3>
+
+        <p>O primeiro pilar é a utilização de uma linguagem simples e acolhedora.</p>
+
+        <p>Muitos materiais educacionais utilizam termos técnicos antes que o estudante tenha construído uma compreensão básica do conceito. No Desbloqueia, buscamos apresentar inicialmente uma explicação mais intuitiva, com exemplos e comparações. Depois disso, os termos formais podem ser introduzidos gradualmente.</p>
+
+        <p>Isso não significa reduzir a qualidade ou a profundidade dos conteúdos, mas organizar a aprendizagem de uma forma que respeite o nível de compreensão do usuário.</p>
+
+        <h3>Acessibilidade e inclusão</h3>
+
+        <p>O segundo pilar é a acessibilidade.</p>
+
+        <p>Uma parte importante da plataforma deverá ser disponibilizada gratuitamente, permitindo que estudantes de diferentes realidades tenham acesso a conteúdos de reforço escolar.</p>
+
+        <p>Essa característica está diretamente relacionada ao impacto social do projeto. Ao facilitar o acesso a materiais educacionais, pretendemos contribuir para a redução das desigualdades de aprendizagem, especialmente entre estudantes que não possuem acesso a aulas particulares ou outros recursos complementares.</p>
+
+        <h3>Ferramenta auxiliar</h3>
+
+        <p>O terceiro pilar é o apoio aos professores, pais e responsáveis.</p>
+
+        <p>A plataforma poderá disponibilizar exercícios, explicações, atividades e sugestões de aplicação prática. Dessa forma, os conteúdos poderão ser utilizados tanto pelos estudantes de maneira autônoma quanto por adultos que estejam auxiliando o processo de aprendizagem.</p>
+
+        <p>Para os professores, o Desbloqueia poderá funcionar como uma fonte complementar de recursos, ajudando na preparação de atividades e na apresentação de um mesmo conteúdo por diferentes perspectivas.</p>
+      </section>
+
+      <section>
+        <h2>Público-alvo</h2>
+
+        <p>O público principal do Desbloqueia é formado por crianças e jovens que desejam melhorar sua compreensão da matemática.</p>
+
+        <p>Entretanto, nosso modelo também considera outros grupos importantes:</p>
+
+        <ul>
+          <li>Professores que procuram materiais complementares</li>
+          <li>Pais e responsáveis que desejam acompanhar o aprendizado</li>
+          <li>Educadores e pedagogos interessados em metodologias mais dinâmicas</li>
+          <li>Escolas que buscam ferramentas de apoio pedagógico</li>
+        </ul>
+
+        <p>Portanto, embora o estudante seja o usuário central, o projeto envolve toda a comunidade escolar.</p>
+
+        <p>O modelo de negócios desenvolvido pela equipe define pais e professores como segmentos importantes, pois são eles que frequentemente procuram soluções para apoiar o aprendizado de crianças e jovens.</p>
+      </section>
+
+      <section>
+        <h2>Aplicação do Design Thinking</h2>
+
+        <p>O desenvolvimento do Desbloqueia utiliza princípios do Design Thinking, uma abordagem de inovação centrada nas necessidades das pessoas.</p>
+
+        <p>O primeiro passo foi buscar compreender o problema pela perspectiva dos usuários. Em vez de desenvolver uma plataforma apenas com base no que nós consideramos adequado, procuramos pensar nas dificuldades reais enfrentadas por estudantes, professores e responsáveis.</p>
+
+        <p>A empatia é fundamental nesse processo. Precisamos compreender por que determinados estudantes se sentem desmotivados, quais conteúdos geram mais dificuldades, como os professores apresentam esses assuntos e quais ferramentas já são utilizadas pelas escolas.</p>
+
+        <p>A partir dessas informações, podemos definir melhor o problema, gerar ideias, criar protótipos e testar as soluções propostas.</p>
+
+        <p>Nosso projeto também prevê a realização de entrevistas com profissionais da educação e representantes de instituições de ensino. Nessas conversas, pretendemos identificar desafios da rotina pedagógica, barreiras enfrentadas pelos professores, experiências anteriores com tecnologias educacionais e sugestões de melhorias para a plataforma.</p>
+
+        <p>Após a apresentação do protótipo, os participantes poderão avaliar a proposta e indicar quais funcionalidades seriam realmente úteis em seu cotidiano. Esse processo de escuta, teste e aperfeiçoamento será fundamental para evitar que o site seja desenvolvido com base apenas em suposições.</p>
+      </section>
+
+      <section>
+        <h2>Estrutura do site</h2>
+
+        <p>A identidade visual do Desbloqueia foi construída para transmitir criatividade, energia, acolhimento e proximidade com o público jovem.</p>
+
+        <p>O logotipo combina o símbolo da raiz quadrada com a letra inicial do nome Desbloqueia, criando uma associação direta com a matemática. As principais cores utilizadas são o laranja e o roxo, acompanhados por tonalidades complementares. O laranja representa dinamismo e entusiasmo, enquanto o roxo contribui para uma identidade criativa, moderna e ligada à inovação.</p>
+
+        <p>A estrutura do site está sendo organizada para permitir uma navegação simples e intuitiva. O objetivo é evitar menus excessivamente complexos e facilitar o acesso aos conteúdos.</p>
+
+        <p>Entre as possibilidades de organização da plataforma estão:</p>
+
+        <ul>
+          <li>Apresentação do projeto</li>
+          <li>Conteúdos separados por tema</li>
+          <li>Explicações teóricas simplificadas</li>
+          <li>Exemplos resolvidos</li>
+          <li>Exercícios de fixação</li>
+          <li>Atividades práticas</li>
+          <li>Desafios educacionais</li>
+          <li>Recursos para professores e responsáveis</li>
+          <li>Canais de contato e envio de sugestões</li>
+        </ul>
+
+        <p>Como o projeto ainda está em fase de desenvolvimento, essas funcionalidades poderão ser modificadas de acordo com os testes realizados e com os feedbacks recebidos.</p>
+      </section>
+
+      <section>
+        <h2>Modelo de negócios</h2>
+
+        <p>Para compreender a viabilidade do Desbloqueia, elaboramos um modelo de negócios utilizando a metodologia Business Model Canvas.</p>
+
+        <p>Esse modelo permite visualizar os principais elementos necessários para o funcionamento da plataforma, como proposta de valor, público-alvo, recursos, atividades, parceiros, canais, custos e fontes de receita.</p>
+
+        <h3>Parcerias principais</h3>
+
+        <p>Entre os parceiros mais importantes estão professores, educadores, pedagogos e especialistas em educação.</p>
+
+        <p>Esses profissionais poderão contribuir com a revisão dos materiais, a validação dos conteúdos e a criação de atividades coerentes com as necessidades dos estudantes.</p>
+
+        <p>Pais, responsáveis e outros colaboradores também poderão participar por meio do envio de sugestões e avaliações.</p>
+
+        <h3>Atividades principais</h3>
+
+        <p>As principais atividades do projeto incluem:</p>
+
+        <ul>
+          <li>Desenvolvimento do site</li>
+          <li>Manutenção da plataforma</li>
+          <li>Criação e atualização dos conteúdos</li>
+          <li>Revisão pedagógica</li>
+          <li>Atendimento aos usuários</li>
+          <li>Divulgação do projeto</li>
+          <li>Coleta de feedbacks</li>
+          <li>Aperfeiçoamento contínuo das funcionalidades</li>
+        </ul>
+
+        <h3>Recursos principais</h3>
+
+        <p>Para o funcionamento do Desbloqueia, serão necessários recursos tecnológicos e humanos.</p>
+
+        <p>Entre eles estão a equipe de desenvolvimento, profissionais da educação, computadores, ferramentas de programação, serviços de hospedagem, sistemas digitais e materiais pedagógicos.</p>
+
+        <h3>Canais de comunicação</h3>
+
+        <p>A comunicação com os usuários poderá ocorrer por meio da própria plataforma, redes sociais, e-mail e WhatsApp.</p>
+
+        <p>Esses canais serão utilizados tanto para divulgar o projeto quanto para responder dúvidas, receber sugestões e identificar problemas de utilização.</p>
+
+        <h3>Relacionamento com os usuários</h3>
+
+        <p>O relacionamento será baseado em uma comunicação contínua com alunos, pais, professores e demais participantes.</p>
+
+        <p>Esse contato é importante porque o Desbloqueia deve permanecer em constante aperfeiçoamento. Os comentários dos usuários poderão indicar dificuldades de navegação, conteúdos que precisam ser explicados de outra maneira e novas funcionalidades que podem ser incorporadas.</p>
+
+        <h3>Sustentabilidade financeira</h3>
+
+        <p>O Desbloqueia foi planejado como uma solução predominantemente digital. Por isso, não será necessária uma estrutura física própria, o que reduz parte dos custos operacionais.</p>
+
+        <p>Os principais investimentos estarão relacionados ao desenvolvimento e à manutenção da plataforma, à contratação de profissionais especializados, à produção de conteúdos, à hospedagem dos sistemas e à divulgação.</p>
+
+        <p>Para conciliar impacto social e sustentabilidade financeira, pensamos em um modelo freemium.</p>
+
+        <p>Nesse modelo, os conteúdos fundamentais permaneceriam gratuitos, permitindo um acesso amplo à plataforma. Eventualmente, um plano premium poderia oferecer recursos adicionais, como trilhas personalizadas, atividades exclusivas e ferramentas específicas de apoio ao ensino.</p>
+
+        <p>Outro compromisso do projeto é evitar anúncios publicitários que possam distrair as crianças. A intenção é manter um ambiente protegido, organizado e focado na aprendizagem. O projeto também poderá buscar contribuições, parcerias institucionais e outras formas éticas de financiamento.</p>
+      </section>
+
+      <section>
+        <h2>Diferenciais do Desbloqueia</h2>
+
+        <p>O Desbloqueia diferencia-se por combinar educação, tecnologia, inovação e impacto social.</p>
+
+        <p>Não estamos desenvolvendo apenas uma página com exercícios. Estamos propondo um ecossistema educacional que considera a experiência do aluno, as dificuldades dos professores, a participação das famílias e a necessidade de tornar o conhecimento mais acessível.</p>
+
+        <p>Entre os principais diferenciais do projeto estão:</p>
+
+        <ul>
+          <li>Linguagem próxima do público</li>
+          <li>Conteúdos relacionados ao cotidiano</li>
+          <li>Identidade visual jovem e acolhedora</li>
+          <li>Possibilidade de gamificação</li>
+          <li>Acesso gratuito aos recursos essenciais</li>
+          <li>Apoio complementar para professores e responsáveis</li>
+          <li>Desenvolvimento orientado pelo feedback dos usuários</li>
+          <li>Compromisso com um ambiente educacional seguro e sem distrações publicitárias</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Impacto esperado</h2>
+
+        <p>O principal impacto esperado é ajudar crianças e jovens a desenvolverem uma relação mais positiva com a matemática.</p>
+
+        <p>Quando um estudante compreende o raciocínio por trás de um conteúdo e consegue relacioná-lo a situações concretas, ele tende a participar mais ativamente do processo de aprendizagem.</p>
+
+        <p>Também esperamos contribuir para o desenvolvimento da autonomia, da capacidade de resolver problemas e da confiança dos estudantes.</p>
+
+        <p>Para os professores, o projeto pode representar uma nova fonte de materiais e estratégias didáticas. Para os pais e responsáveis, pode oferecer um recurso de apoio para acompanhar os estudos. Para as instituições de ensino, pode funcionar como uma ferramenta complementar de reforço e inovação pedagógica.</p>
+
+        <p>Em uma perspectiva mais ampla, o Desbloqueia busca contribuir para a democratização do conhecimento e para a redução das desigualdades educacionais.</p>
+      </section>
+
+      <section>
+        <h2>Situação atual do projeto</h2>
+
+        <p>Atualmente, o Desbloqueia encontra-se em fase de desenvolvimento.</p>
+
+        <p>Já foram elaborados o conceito do projeto, a identidade visual, a proposta de valor, o público-alvo, o modelo de negócios e uma primeira estrutura para o site.</p>
+
+        <p>As próximas etapas incluem o aperfeiçoamento da interface, a organização dos conteúdos, o desenvolvimento das funcionalidades, a realização de testes e a coleta de feedbacks com possíveis usuários e profissionais da educação.</p>
+
+        <p>É importante destacar que o site apresentado neste momento representa um protótipo inicial. Ele não é considerado um produto finalizado. As avaliações realizadas durante a disciplina serão utilizadas para corrigir problemas, aprimorar a navegação e verificar se a solução realmente atende às necessidades identificadas.</p>
+      </section>
+
+      <section class="encerramento">
+        <h2>Encerramento</h2>
+
+        <p>Em resumo, o Desbloqueia é uma proposta de inovação educacional que utiliza a tecnologia para aproximar a matemática da realidade dos estudantes.</p>
+
+        <p>Nosso objetivo é mostrar que aprender matemática pode ser uma experiência mais clara, interessante e acessível. Por meio de uma linguagem descontraída, de exemplos práticos e de recursos interativos, pretendemos ajudar os estudantes a superar dificuldades e desenvolver maior confiança em sua capacidade de aprender.</p>
+
+        <p>Ao mesmo tempo, buscamos oferecer uma ferramenta de apoio para professores, pais e responsáveis, fortalecendo a participação de toda a comunidade no processo educacional.</p>
+
+        <p>O projeto está sendo desenvolvido por Ana, Paulo Enrico e Gabriel, no segundo quadrimestre de 2026, para a disciplina de Inovações para Engenharia da Universidade Federal do ABC.</p>
+
+        <p>O Desbloqueia ainda está em construção, mas parte de uma ideia simples e importante: muitas vezes, o estudante não precisa de uma explicação mais difícil. Ele precisa de uma explicação diferente.</p>
+
+        <div class="frase-final">
+          Desbloqueia — matemática na prática, sem complicação.
+        </div>
+      </section>
     </article>
 
     <div class="back-button-container">
-      <a href="index.html">
-        <img src="imagens/Round-Back-Button-PNG-Image-Background.png" alt="Voltar" class="back-button" />
+      <a href="index.html" aria-label="Voltar para a página inicial">
+        <img
+          src="imagens/Round-Back-Button-PNG-Image-Background.png"
+          alt="Voltar"
+          class="back-button"
+        >
       </a>
     </div>
-  </div>
+  </main>
 </body>
+
 </html>
