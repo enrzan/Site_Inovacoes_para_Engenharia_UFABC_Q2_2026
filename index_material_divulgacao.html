@@ -1,1 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-br">
 
+<head>
+  <link rel="icon" type="image/png" href="imagens/Logo.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Materiais de Divulgação | Desbloqueia</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Chewy&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+    :root {
+      --laranja-forte: #ff751f;
+      --laranja-claro: #ff914d;
+      --lilas: #cb6ce6;
+      --roxo: #8c52ff;
+      --roxo-escuro: #6532d2;
+      --lilas-claro: #f1ddf8;
+      --laranja-suave: #fff0e6;
+      --creme: #fff8f3;
+      --fundo-conteudo: #fffdfb;
+      --texto: #352544;
+      --branco: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      font-family: 'Baloo 2', Arial, sans-serif;
+      color: var(--texto);
+      background: linear-gradient(
+        135deg,
+        var(--laranja-claro) 0%,
+        var(--laranja-forte) 100%
+      );
+    }
+
+    main {
+      width: calc(100% - 40px);
+      max-width: 1100px;
+      min-height: 100vh;
+      margin: 0 auto;
+      padding: 28px;
+      background-color: var(--fundo-conteudo);
+      border-left: 6px solid var(--laranja-forte);
+      border-right: 6px solid var(--laranja-forte);
+      box-shadow: 0 0 35px rgba(53, 37, 68, 0.24);
+    }
+
+    .titulo-principal {
+      margin: 0 0 24px;
+      padding: 16px;
+      font-family: 'Chewy', cursive;
+      font-size: clamp(2.7rem, 6vw, 4.5rem);
+      font-weight: normal;
+      line-height: 1.1;
+      text-align: center;
+      color: var(--roxo);
+      background: linear-gradient(
+        135deg,
+        var(--creme) 0%,
+        var(--lilas-claro) 100%
+      );
+      border: 5px solid var(--laranja-forte);
+      border-radius: 24px;
+      box-shadow: 0 8px 18px rgba(140, 82, 255, 0.14);
+      text-shadow: 3px 3px 0 rgba(203, 108, 230, 0.28);
+    }
+
+    .introducao {
+      width: 100%;
+      margin: 20px 0 28px;
+      padding: 28px;
+      background: linear-gradient(
+        135deg,
+        var(--creme) 0%,
+        #fff5ee 100%
+      );
+      border: 4px solid var(--lilas);
+      border-radius: 22px;
+      box-shadow: 0 8px 18px rgba(101, 50, 210, 0.13);
+      font-size: 1.15rem;
+      line-height: 1.75;
+      text-align: justify;
+    }
+
+    .introducao p {
+      margin: 0;
+    }
+
+    .material {
+      margin: 22px 0;
+      overflow: hidden;
+      background-color: var(--branco);
+      border: 3px solid var(--roxo);
+      border-radius: 18px;
+      box-shadow: 0 8px 18px rgba(101, 50, 210, 0.16);
+    }
+
+    .material:nth-of-type(even) {
+      border-color: var(--laranja-forte);
+    }
+
+    .material summary {
+      position: relative;
+      padding: 19px 66px 19px 24px;
+      color: var(--branco);
+      background: linear-gradient(
+        135deg,
+        var(--roxo) 0%,
+        var(--roxo-escuro) 100%
+      );
+      font-size: 1.35rem;
+      font-weight: 800;
+      line-height: 1.3;
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+    }
+
+    .material:nth-of-type(even) summary {
+      background: linear-gradient(
+        135deg,
+        var(--laranja-forte) 0%,
+        var(--laranja-claro) 100%
+      );
+    }
+
+    .material summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .material summary::after {
+      content: "+";
+      position: absolute;
+      top: 50%;
+      right: 22px;
+      transform: translateY(-50%);
+      color: var(--laranja-claro);
+      font-family: Arial, sans-serif;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .material:nth-of-type(even) summary::after {
+      color: var(--branco);
+    }
+
+    .material[open] summary::after {
+      content: "−";
+    }
+
+    .material summary:hover {
+      filter: brightness(1.07);
+    }
+
+    .material summary:focus-visible {
+      outline: 4px solid var(--laranja-forte);
+      outline-offset: -4px;
+    }
+
+    .material-conteudo {
+      padding: 18px;
+      background: linear-gradient(
+        135deg,
+        var(--lilas-claro) 0%,
+        var(--laranja-suave) 100%
+      );
+    }
+
+    .banner-imagem {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+      background-color: var(--branco);
+      border: 2px solid var(--lilas);
+      border-radius: 14px;
+      box-shadow: 0 6px 14px rgba(101, 50, 210, 0.13);
+    }
+
+    .pdf-visualizador {
+      display: block;
+      width: 100%;
+      height: 720px;
+      background-color: var(--branco);
+      border: 2px solid var(--lilas);
+      border-radius: 14px;
+    }
+
+    .material-link {
+      display: block;
+      width: fit-content;
+      margin: 18px auto 0;
+      padding: 11px 22px;
+      color: var(--branco);
+      background-color: var(--laranja-forte);
+      border: 3px solid var(--laranja-forte);
+      border-radius: 12px;
+      font-weight: 800;
+      text-align: center;
+      text-decoration: none;
+      transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .material-link:hover {
+      color: var(--laranja-forte);
+      background-color: var(--branco);
+      transform: translateY(-2px);
+    }
+
+    .material-link:focus-visible {
+      outline: 3px solid var(--roxo);
+      outline-offset: 4px;
+    }
+
+    .back-button-container {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-top: 28px;
+    }
+
+    .back-button {
+      display: block;
+      width: 58px;
+      height: auto;
+      transition: transform 0.2s ease;
+    }
+
+    .back-button:hover {
+      transform: scale(1.1);
+    }
+
+    .back-button:focus-visible {
+      outline: 3px solid var(--roxo);
+      outline-offset: 5px;
+      border-radius: 50%;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        width: 94%;
+        padding: 16px;
+        border-left: 3px solid var(--laranja-forte);
+        border-right: 3px solid var(--laranja-forte);
+      }
+
+      .titulo-principal {
+        padding: 14px;
+        border-width: 4px;
+        border-radius: 18px;
+      }
+
+      .introducao {
+        padding: 20px;
+        font-size: 1.05rem;
+        line-height: 1.65;
+        text-align: left;
+        border-width: 3px;
+        border-radius: 18px;
+      }
+
+      .material summary {
+        padding: 16px 56px 16px 18px;
+        font-size: 1.15rem;
+      }
+
+      .material summary::after {
+        right: 18px;
+      }
+
+      .pdf-visualizador {
+        height: 550px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      main {
+        width: 100%;
+        padding: 12px;
+        border-left: none;
+        border-right: none;
+      }
+
+      .titulo-principal {
+        margin-bottom: 16px;
+      }
+
+      .introducao {
+        margin: 16px 0 22px;
+        padding: 17px;
+      }
+
+      .material {
+        margin: 16px 0;
+      }
+
+      .material-conteudo {
+        padding: 10px;
+      }
+
+      .pdf-visualizador {
+        height: 450px;
+      }
+
+      .material-link {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1 class="titulo-principal">Materiais de Divulgação</h1>
+    </header>
+
+    <div class="introducao">
+      <p>
+        Nesta página estão reunidos os principais materiais de divulgação do projeto Desbloqueia. Clique sobre cada opção para visualizar o panfleto, o banner ou o folder e clique novamente para recolher o conteúdo.
+      </p>
+    </div>
+
+    <details class="material">
+      <summary>Panfleto do projeto</summary>
+
+      <div class="material-conteudo">
+        <iframe
+          src="imagens/Panfleto.pdf"
+          title="Panfleto do projeto Desbloqueia"
+          class="pdf-visualizador"
+        ></iframe>
+
+        <a
+          href="imagens/Panfleto.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="material-link"
+        >
+          Abrir panfleto em uma nova aba
+        </a>
+      </div>
+    </details>
+
+    <details class="material">
+      <summary>Banner do projeto</summary>
+
+      <div class="material-conteudo">
+        <img
+          src="imagens/Banner.png"
+          alt="Banner de divulgação do projeto Desbloqueia"
+          class="banner-imagem"
+        >
+
+        <a
+          href="imagens/Banner.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="material-link"
+        >
+          Abrir banner em uma nova aba
+        </a>
+      </div>
+    </details>
+
+    <details class="material">
+      <summary>Folder do projeto</summary>
+
+      <div class="material-conteudo">
+        <iframe
+          src="imagens/Folder.pdf"
+          title="Folder do projeto Desbloqueia"
+          class="pdf-visualizador"
+        ></iframe>
+
+        <a
+          href="imagens/Folder.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="material-link"
+        >
+          Abrir folder em uma nova aba
+        </a>
+      </div>
+    </details>
+
+    <div class="back-button-container">
+      <a href="index.html" aria-label="Voltar para a página inicial">
+        <img
+          src="imagens/Round-Back-Button-PNG-Image-Background.png"
+          alt="Voltar"
+          class="back-button"
+        >
+      </a>
+    </div>
+  </main>
+</body>
+
+</html>
